@@ -26,6 +26,16 @@
             <input type="text" name="nome_autor" id="nome_autor" size="40" placeholder="Informe o nome do autor" required>
             <label for="nome_editora">Informe a editora</label>
             <input type="text" name="nome_editora" id="nome_editora" placeholder="Informe o nome da editora" required>
+            <label for="nome_editora">Informe a categoria</label>
+            <select name="nome_categoria" id="nome_categoria" required>
+                <option value="">Selecione a categoria</option>
+                <option value="Biblias">Bíblias</option>
+                <option value="Casamento">Casamento</option>
+                <option value="Comentario_Biblico">Comentário Bíblico</option>
+                <option value="Dicionario_Biblico">Dicionário Bíblico</option>
+                <option value="Enciclopedia_Biblica">Enciclopédia Bíblica</option>
+                <!-- Adicione outras opções de categoria conforme necessário -->
+            </select>
             <label for="data_cadastro">Data do Cadastro</label>
             <input type="text" name="data_cadastro" id="data_cadastro" value="<?=$data?>">
             <input type="submit" name="botao_cadastrar" value="Cadastrar">

@@ -24,6 +24,8 @@
             <input type="text" name="consultar_autor" id="consulta_autor">
             <label for="consulta_livro">Pesquisar Editora</label>
             <input type="text" name="consultar_editora" id="consulta_editora">
+            <label for="consulta_livro">Pesquisar Categoria</label>
+            <input type="text" name="consultar_categoria" id="consulta_categoria">
             <input type="submit" name="botao_pesquisar" value="Pesquisar">
         </form>
         <button onclick="window.location.href = 'index.php'">Retornar à página inicial</button>

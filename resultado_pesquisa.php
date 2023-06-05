@@ -34,9 +34,13 @@
             if (!empty($consultar_editora)) {
                 $sql .= " AND nome_editora LIKE '%$consultar_editora%'";
             }
+
+            if (!empty($consultar_categoria)) {
+                $sql .= " AND nome_categoria LIKE '%$consultar_categoria%'";
+            }
     
             $resultado = $conexao->query($sql);
-    
+            /*
             // Exibir os resultados da pesquisa
             if ($resultado->num_rows > 0) {
                 while ($livro = $resultado->fetch_assoc()) {
@@ -46,6 +50,26 @@
                     echo "<p>Data do Cadastro: " . $livro['data_cadastro'] . "</p>";
                     echo "<hr>";
                 }
+            } else {
+                echo "Nenhum livro encontrado.";
+            }*/
+
+            // Exibir os resultados da pesquisa
+            if ($resultado->num_rows > 0) {
+                echo '<table>';
+                echo '<tr><th>Id</th><th>Nome do Livro</th><th>Nome do Autor</th><th>Nome da Editora</th><th>Categoria</th><th>Data do Cadastro</th></tr>';
+                while ($livro = $resultado->fetch_assoc()) {
+                    echo '<tr>';
+                    echo '<td>' . $livro['id'] . '</td>';
+                    echo '<td>' . $livro['nome_livro'] . '</td>';
+                    echo '<td>' . $livro['nome_autor'] . '</td>';
+                    echo '<td>' . $livro['nome_editora'] . '</td>';
+                    echo '<td>' . $livro['nome_categoria'] . '</td>';
+                    echo '<td>' . $livro['data_cadastro'] . '</td>';
+                    echo '</tr>';
+                    echo '<tr><td colspan="6"><hr></td></tr>'; // Linha de separação de colunas
+                }
+                echo '</table>';
             } else {
                 echo "Nenhum livro encontrado.";
             }
