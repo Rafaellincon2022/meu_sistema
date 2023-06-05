@@ -11,7 +11,7 @@
 <body>
 
     <?php 
-        include("config.php");
+
         $livro = $_GET['nome_livro'] ?? '';
         $autor = $_GET['nome_autor'] ?? '';
         $editora = $_GET['nome_editora'] ?? '';
@@ -20,7 +20,7 @@
 
     <main>
         <h1>Cadastro de Livros</h1>
-        <form action="<?=$_SERVER['PHP_SELF']?>" method="get">
+        <form action="cadastro.php" method="get">
             <label for="">Informe o nome do livro</label>
             <input type="text" name="nome_livro" id="nome_livro" size="40" placeholder="Informe o nome do livro" required>
             <label for="nome_autor">Informe o nome do autor</label>
@@ -33,36 +33,28 @@
         </form>
     </main>
 
-    <main>
-        <h1>Livros Cadastrados</h1>
-        <?php 
-            print "<p>O livro cadastrado foi:</p>";
-            print "<ol><li>Nome do Livro: <strong>$livro</strong></li>";
-            print "<li>Nome do Autor: <strong>$autor</strong></li>";
-            print "<li>Nome da Editora: <strong>$editora</strong></li>";
-            print "<li>Data do Cadastro: <strong>$data</strong></li>";
-            
-            if (isset($_GET['botao_cadastrar'])) {
-                $sql = "INSERT INTO livros (nome_livro, nome_autor, nome_editora, data_cadastro) VALUES (?, ?, ?, ?)";
-                $stmt = $conexao->prepare($sql);
-                $stmt->bind_param("ssss", $livro, $autor, $editora, $data);
-                $stmt->execute();
-                $stmt->close();
-            }
-            
+    <?php 
+        
+        if (isset($_GET['botao_cadastrar'])) {
+            $sql = "INSERT INTO livros (nome_livro, nome_autor, nome_editora, data_cadastro) VALUES (?, ?, ?, ?)";
+            $stmt = $conexao->prepare($sql);
+            $stmt->bind_param("ssss", $livro, $autor, $editora, $data);
+            $stmt->execute();
+            $stmt->close();
+        }
+        
 
-            /*
-            if ($_GET['botao_cadastrar']) {
+        /*
+        if ($_GET['botao_cadastrar']) {
 
-                $sql = mysqli_query($conexao, "INSERT INTO livros (nome_livro, nome_autor, nome_editora, data_cadastro) VALUES ('{$livro}', '{$autor}', '{$editora}', '{$data}')");
+            $sql = mysqli_query($conexao, "INSERT INTO livros (nome_livro, nome_autor, nome_editora, data_cadastro) VALUES ('{$livro}', '{$autor}', '{$editora}', '{$data}')");
 
-            } else {
-                print "Não consegui";
-            }
-            */
-            
-            //$resultado = $conexao->query($sql);
-        ?>
-    </main>
+        } else {
+            print "Não consegui";
+        }
+        */
+        
+        //$resultado = $conexao->query($sql);
+    ?>
 </body>
 </html>
