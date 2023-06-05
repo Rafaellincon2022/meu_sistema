@@ -52,7 +52,7 @@
         }
     ?>
 
-        <button onclick="window.location.href = 'consulta.php'">Voltar</button>
+        <button onclick="window.location.href = 'tela_consulta.php'">Voltar</button>
         <button onclick="window.location.href = 'index.php'">Retornar à página inicial</button>
     </main>
 </body>

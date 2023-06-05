@@ -26,6 +26,7 @@
             <input type="text" name="consultar_editora" id="consulta_editora">
             <input type="submit" name="botao_pesquisar" value="Pesquisar">
         </form>
+        <button onclick="window.location.href = 'index.php'">Retornar à página inicial</button>
     </main>
 
 </body>

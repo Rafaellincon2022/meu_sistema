@@ -14,26 +14,44 @@
         <h1>Livros Cadastrados</h1>
         <?php 
             include("config.php");
-            $livro = $_GET['nome_livro'] ?? '';
-            $autor = $_GET['nome_autor'] ?? '';
-            $editora = $_GET['nome_editora'] ?? '';
+            $livro = $_POST['nome_livro'] ?? '';
+            $autor = $_POST['nome_autor'] ?? '';
+            $editora = $_POST['nome_editora'] ?? '';
             $data = date('Y-m-d'); //date('d/m/Y')
 
-            print "<p>O livro cadastrado foi:</p>";
+            /*print "<p>O livro cadastrado foi:</p>";
             print "<ol><li>Nome do Livro: <strong>$livro</strong></li>";
             print "<li>Nome do Autor: <strong>$autor</strong></li>";
             print "<li>Nome da Editora: <strong>$editora</strong></li>";
-            print "<li>Data do Cadastro: <strong>$data</strong></li>";
-
-            if (isset($_GET['botao_cadastrar'])) {
-                $sql = "INSERT INTO livros (nome_livro, nome_autor, nome_editora, data_cadastro) VALUES (?, ?, ?, ?)";
-                $stmt = $conexao->prepare($sql);
-                $stmt->bind_param("ssss", $livro, $autor, $editora, $data);
-                $stmt->execute();
-                $stmt->close();
+            print "<li>Data do Cadastro: <strong>$data</strong></li>";*/
+            
+            if (isset($_POST['botao_cadastrar'])) {
+                // Verifica se o livro já existe
+                $sql_verificar = "SELECT nome_livro FROM livros WHERE nome_livro = ?";
+                $stmt_verificar = $conexao->prepare($sql_verificar);
+                $stmt_verificar->bind_param("s", $livro);
+                $stmt_verificar->execute();
+                $stmt_verificar->store_result();
+                
+                if ($stmt_verificar->num_rows > 0) {
+                    // O livro já existe, exibe uma mensagem informando
+                    print "<p>O livro <strong>$livro</strong> já existe!</p>";
+                } else {
+                    // O livro não existe, realiza a inclusão
+                    $sql_inserir = "INSERT INTO livros (nome_livro, nome_autor, nome_editora, data_cadastro) VALUES (?, ?, ?, ?)";
+                    $stmt_inserir = $conexao->prepare($sql_inserir);
+                    $stmt_inserir->bind_param("ssss", $livro, $autor, $editora, $data);
+                    $stmt_inserir->execute();
+                    $stmt_inserir->close();
+                    
+                    print "<p>Livro <strong>$livro</strong> cadastrado com sucesso!</p>";
+                }
+                
+                $stmt_verificar->close();
             }
         ?>
-        <button onclick="window.history.back()">Voltar</button>
+        <button onclick="window.location.href='tela_consulta.php'">Voltar</button>
+        <button onclick="window.location.href='index.php'">Página Inicial</button>
     </main>
 </body>
 </html>
