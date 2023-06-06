@@ -19,7 +19,7 @@
 
     <main>
         <h1>Cadastro de Livros</h1>
-        <form action="cadastro.php" method="post">
+        <form action="05-cadastro.php" method="post">
             <label for="">Informe o nome do livro</label>
             <input type="text" name="nome_livro" id="nome_livro" size="40" placeholder="Informe o nome do livro" required>
             <label for="nome_autor">Informe o nome do autor</label>
@@ -29,18 +29,25 @@
             <label for="nome_editora">Informe a categoria</label>
             <select name="nome_categoria" id="nome_categoria" required>
                 <option value="">Selecione a categoria</option>
-                <option value="Biblias">Bíblias</option>
+                <option value="Bíblias">Bíblias</option>
                 <option value="Casamento">Casamento</option>
-                <option value="Comentario_Biblico">Comentário Bíblico</option>
-                <option value="Dicionario_Biblico">Dicionário Bíblico</option>
-                <option value="Enciclopedia_Biblica">Enciclopédia Bíblica</option>
+                <option value="Comentário Biblico">Comentário Bíblico</option>
+                <option value="Dicionário Biblico">Dicionário Bíblico</option>
+                <option value="Doutrina">Doutrina</option>
+                <option value="Enciclopédia Biblica">Enciclopédia Bíblica</option>
+                <option value="Geográfia e História Bíblica">Geografia e História Biblica</option>
+                <option value="Homens">Homens</option>
+                <option value="Mulheres">Mulheres</option>
+                <option value="Revistas Escola Domnical">Revistas Escola Dominical</option>
+                <option value="Teologia Sistemática">Teologia Sistemática</option>
+                <option value="Vida Cristã">Vida Cristã</option>
                 <!-- Adicione outras opções de categoria conforme necessário -->
             </select>
             <label for="data_cadastro">Data do Cadastro</label>
             <input type="text" name="data_cadastro" id="data_cadastro" value="<?=$data?>">
             <input type="submit" name="botao_cadastrar" value="Cadastrar">
         </form>
-        <button onclick="window.location.href='index.php'">Voltar</button>
+        <button onclick="window.location.href='01-index.php'">Voltar</button>
     </main>
 </body>
 </html>

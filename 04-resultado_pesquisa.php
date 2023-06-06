@@ -10,7 +10,7 @@
 <body>
 
     <?php 
-        include('config.php');
+        include('00-config.php');
         $consultar_livro = $_GET['consultar_livro'] ?? '';
         $consultar_autor = $_GET['consultar_autor'] ?? '';
         $consultar_editora = $_GET['consultar_editora'] ?? '';
@@ -76,8 +76,8 @@
         }
     ?>
 
-        <button onclick="window.location.href = 'tela_consulta.php'">Voltar</button>
-        <button onclick="window.location.href = 'index.php'">Retornar à página inicial</button>
+        <button onclick="window.location.href = '03-tela_consulta.php'">Voltar</button>
+        <button onclick="window.location.href = '01-index.php'">Retornar à página inicial</button>
     </main>
 </body>
 </html>

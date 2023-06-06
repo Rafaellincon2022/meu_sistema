@@ -9,14 +9,14 @@
 </head>
 <body>
     <?php 
-        include("config.php");
+        include("00-config.php");
         $consultar_livro = $_GET['consultar_livro'] ?? '';
         $consultar_autor = $_GET['consultar_autor'] ?? '';
         $consultar_editora = $_GET['consultar_editora'] ?? '';
     ?>
 
     <main>
-        <form action="resultado_pesquisa.php" method="get">
+        <form action="04-resultado_pesquisa.php" method="get">
             <h1>Consulta de Livros</h1>
             <label for="consulta_livro">Pesquisar Livro</label>
             <input type="text" name="consultar_livro" id="consulta_livro">
@@ -28,7 +28,7 @@
             <input type="text" name="consultar_categoria" id="consulta_categoria">
             <input type="submit" name="botao_pesquisar" value="Pesquisar">
         </form>
-        <button onclick="window.location.href = 'index.php'">Retornar à página inicial</button>
+        <button onclick="window.location.href = '01-index.php'">Retornar à página inicial</button>
     </main>
 
 </body>

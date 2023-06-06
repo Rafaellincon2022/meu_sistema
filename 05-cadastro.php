@@ -13,7 +13,7 @@
     <main>
         <h1>Livros Cadastrados</h1>
         <?php 
-            include("config.php");
+            include("00-config.php");
             $livro = $_POST['nome_livro'] ?? '';
             $autor = $_POST['nome_autor'] ?? '';
             $editora = $_POST['nome_editora'] ?? '';
@@ -51,8 +51,8 @@
                 $stmt_verificar->close();
             }
         ?>
-        <button onclick="window.location.href='tela_consulta.php'">Voltar</button>
-        <button onclick="window.location.href='index.php'">Página Inicial</button>
+        <button onclick="window.location.href='03-tela_consulta.php'">Voltar</button>
+        <button onclick="window.location.href='01-index.php'">Página Inicial</button>
     </main>
 </body>
 </html>

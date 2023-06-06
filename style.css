@@ -8,8 +8,9 @@
 /* ELEMENTOS DA INTERFACE */
 
 body {
-    background-color: #15142b;
-    background-image: linear-gradient(180deg, #372991, #15142b);
+    /*background-color: #15142b;*/
+    /*background-image: linear-gradient(180deg, #372991, #15142b);*/
+    background-image: url("imagens/fundo-1080.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
