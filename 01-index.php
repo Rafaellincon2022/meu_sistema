@@ -1,3 +1,7 @@
+<?php 
+    include('08-protect.php');
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -14,7 +18,8 @@
         <div class="welcome-buttons">
             <button onclick="window.location.href='02-tela_cadastro.php'">Cadastrar Novo Livro</button>
             <button onclick="window.location.href='03-tela_consulta.php'">Consultar Livros</button>
-        </div>
+         </div>
+        <a href="07-logout.php">Sair</a>
     </section>
 
 </body>
