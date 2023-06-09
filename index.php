@@ -4,12 +4,13 @@
 
 
     // CONDIÇÃO PARA VERIFICAR SE EXISTE O CAMPO E-MAIL E SENHA
-    if (isset($_POST['campo_nome']) && isset($_POST['campo_senha'])) {
+    if (isset($_POST['campo_nome']) || isset($_POST['campo_senha'])) {
+
         // Verifica se o campo nome está vazio
-        if (strlen($_POST['campo_nome'] == 0)) {
+        if (strlen($_POST['campo_nome']) == 0) {
             print "Informe o nome de usuário!";
         // Verifica se o campo senha está vazio
-        } else if (strlen($_POST['campo_senha'] == 0)) {
+        } else if (strlen($_POST['campo_senha']) == 0) {
             print "Informe a senha do usuário!";
         // Se tudo acima estiver correto, ele prossegue com o código do login
         } else {

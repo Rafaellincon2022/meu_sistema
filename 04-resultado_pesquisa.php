@@ -1,3 +1,7 @@
+<?php 
+    include('08-protect.php');
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

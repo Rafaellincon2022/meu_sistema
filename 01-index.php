@@ -18,6 +18,7 @@
         <div class="welcome-buttons">
             <button onclick="window.location.href='02-tela_cadastro.php'">Cadastrar Novo Livro</button>
             <button onclick="window.location.href='03-tela_consulta.php'">Consultar Livros</button>
+            <button onclick="window.location.href='09-atualizar.php'">Atualizar Livro</button>
          </div>
         <a href="07-logout.php">Sair</a>
     </section>
