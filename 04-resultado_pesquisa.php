@@ -25,7 +25,9 @@
         <?php 
         if (isset($_GET['botao_pesquisar'])) {
             // Verificar qual campo de pesquisa foi preenchido e construir a consulta SQL correspondente
-            $sql = "SELECT * FROM livros WHERE 1=1"; // Filtro base
+            // $sql = "SELECT * FROM livros WHERE 1=1"; // Filtro base
+
+            $sql = "SELECT * FROM livros WHERE ativo = 1";
     
             if (!empty($consultar_livro)) {
                 $sql .= " AND nome_livro LIKE '%$consultar_livro%'";
