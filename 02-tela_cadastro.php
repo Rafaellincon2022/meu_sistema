@@ -18,6 +18,7 @@
         $livro = $_POST['nome_livro'] ?? '';
         $autor = $_POST['nome_autor'] ?? '';
         $editora = $_POST['nome_editora'] ?? '';
+        $resumo = $_POST['resumo_livro'] ?? '';
         $data = date('Y-m-d'); //date('d/m/Y')
     ?>
 
@@ -47,6 +48,10 @@
                 <option value="Vida Cristã">Vida Cristã</option>
                 <!-- Adicione outras opções de categoria conforme necessário -->
             </select>
+
+            <label for="">Escreva um resumo do livro com mínimo 120 palavras.</label>
+            <textarea name="resumo_livro" rows="4" cols="50" maxlength="1000"></textarea>
+
             <label for="data_cadastro">Data do Cadastro</label>
             <input type="text" name="data_cadastro" id="data_cadastro" value="<?=$data?>">
             <input type="submit" name="botao_cadastrar" value="Cadastrar">

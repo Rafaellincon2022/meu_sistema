@@ -20,6 +20,7 @@
             <button onclick="window.location.href='03-tela_consulta.php'">Consultar Livros</button>
             <button onclick="window.location.href='09-atualizar.php'">Atualizar Livro</button>
             <button onclick="window.location.href='10-excluir.php'">Excluir Livro</button>
+            <button onclick="window.location.href='11-controle_de_livros.php'">Controle de Livros</button>
          </div>
         <a href="07-logout.php">Sair</a>
     </section>
