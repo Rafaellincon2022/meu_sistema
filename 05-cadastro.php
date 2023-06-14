@@ -23,6 +23,7 @@
             $editora = $_POST['nome_editora'] ?? '';
             $categoria = $_POST['nome_categoria'] ?? '';
             $resumo = $_POST['resumo_livro'] ?? '';
+            $ativo = 's';
             $data = date('Y-m-d'); //date('d/m/Y')
 
             /*print "<p>O livro cadastrado foi:</p>";
@@ -44,9 +45,9 @@
                     print "<p>O livro <strong>$livro</strong> já existe!</p>";
                 } else {
                     // O livro não existe, realiza a inclusão
-                    $sql_inserir = "INSERT INTO livros (nome_livro, nome_autor, nome_editora, nome_categoria, resumo_livro, data_cadastro) VALUES (?, ?, ?, ?, ?, ?)";
+                    $sql_inserir = "INSERT INTO livros (nome_livro, nome_autor, nome_editora, nome_categoria, resumo_livro, data_cadastro, ativo) VALUES (?, ?, ?, ?, ?, ?, ?)";
                     $stmt_inserir = $conexao->prepare($sql_inserir);
-                    $stmt_inserir->bind_param("ssssss", $livro, $autor, $editora, $categoria, $resumo, $data);
+                    $stmt_inserir->bind_param("sssssss", $livro, $autor, $editora, $categoria, $resumo, $data, $ativo);
                     $stmt_inserir->execute();
                     $stmt_inserir->close();
                     

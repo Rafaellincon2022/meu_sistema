@@ -19,6 +19,7 @@
         $autor = $_POST['nome_autor'] ?? '';
         $editora = $_POST['nome_editora'] ?? '';
         $resumo = $_POST['resumo_livro'] ?? '';
+        $ativo = 's';
         $data = date('Y-m-d'); //date('d/m/Y')
     ?>
 
