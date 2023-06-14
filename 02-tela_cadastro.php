@@ -43,6 +43,7 @@
                 <option value="Homens">Homens</option>
                 <option value="Mulheres">Mulheres</option>
                 <option value="Revistas Escola Domnical">Revistas Escola Dominical</option>
+                <option value="Teologia">Teologia</option>
                 <option value="Teologia Sistemática">Teologia Sistemática</option>
                 <option value="Vida Cristã">Vida Cristã</option>
                 <!-- Adicione outras opções de categoria conforme necessário -->
