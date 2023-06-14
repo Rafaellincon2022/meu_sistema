@@ -1,16 +1,9 @@
 <?php 
-    // Criamos a constantes para nossa base de dados
-    /*
-    define('HOST', 'localhost');
-    define('BASE', 'cadastro_livros');
-    define('USUARIO', 'root');
-    define('SENHA', '');
-    */
 
     $hostname = 'localhost';
     $banco_de_dados = 'cadastro_livros';
-    $usuario = 'root';
-    $senha = '';
+    $usuario = 'admin';
+    $senha = 'GIGA@bx92sq41!@#_';
     
     
 
