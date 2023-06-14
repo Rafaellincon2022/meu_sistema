@@ -8,6 +8,11 @@
     
 
     // Criamos as variáveis de conexão
-    $conexao = mysqli_connect($hostname, $usuario, $senha, $banco_de_dados) or die ("Erro de Conexão");
+    $conexao = mysqli_connect($hostname, $usuario, $senha, $banco_de_dados);
+
+    if (mysqli_connect_error()) {
+        echo "Problemas para conectar no banco. Verifique os dados!";
+        die();
+    }
     
 ?>

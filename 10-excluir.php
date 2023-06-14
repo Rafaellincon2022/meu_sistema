@@ -31,7 +31,7 @@
 
                 if ($stmt_verificar->num_rows > 0) {
                     // O livro existe, realiza a exclusão
-                    $sql_excluir = "DELETE FROM livros WHERE nome_livro = ?";
+                    $sql_excluir = "UPDATE livros SET ativo = 0 WHERE nome_livro = ?";
                     $stmt_excluir = $conexao->prepare($sql_excluir);
                     $stmt_excluir->bind_param("s", $livro_excluir);
                     $stmt_excluir->execute();
